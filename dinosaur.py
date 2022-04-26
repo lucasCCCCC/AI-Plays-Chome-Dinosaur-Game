@@ -9,7 +9,7 @@ DINOSAUR_JUMP = pygame.image.load("Game Assets/Dinosaur/DinosaurJump.png")
 class Dinosaur:
     X = 70
     Y = 360
-    speed_jump = 5
+    speed_jump = 10
 
     def __init__(self, img=DINOSAUR_RUN[0]):
         self.img = img
@@ -37,8 +37,8 @@ class Dinosaur:
         self.img = DINOSAUR_JUMP
 
         if self.JUMP:
-            self.rect.y -= self.speed_jump * 2
-            self.speed_jump -= 0.5
+            self.rect.y -= self.jump_speed * 3
+            self.jump_speed -= 0.6
 
         if self.jump_speed <= -self.speed_jump:
             self.JUMP = False
