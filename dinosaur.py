@@ -38,7 +38,7 @@ class Dinosaur:
 
         if self.JUMP:
             self.rect.y -= self.jump_speed * 3
-            self.jump_speed -= 0.6
+            self.jump_speed -= 0.9
 
         if self.jump_speed <= -self.speed_jump:
             self.JUMP = False
