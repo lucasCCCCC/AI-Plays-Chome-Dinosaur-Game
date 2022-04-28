@@ -58,7 +58,7 @@ def eval_genomes(genomes, config):
         global score, speed
         score += 1
         if score % 100 == 1:
-            speed += 1
+            speed += 0.5
 
         s = FONT.render(str(score), True, "white")
         SCREEN.blit(s, [750, 25])
@@ -122,7 +122,7 @@ def eval_genomes(genomes, config):
 
             for x, dino in enumerate(dinosaurs):
                 if dino.rect.colliderect(cacti_.rect):
-                    ge[x].fitness -= 1
+                    ge[x].fitness -= 0.5
                     removeDinosaur(x)
 
         # keyPressed = pygame.key.get_pressed()
@@ -157,7 +157,7 @@ def run(config_file):
     global population
 
     population = neat.Population(config)
-    population.run(eval_genomes, 50)
+    population.run(eval_genomes, 100)
 
 
 if __name__ == "__main__":
